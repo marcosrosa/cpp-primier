@@ -13,6 +13,7 @@
 
 
 class SalesData {
+	// nao usuaria funcoes friends
 	friend SalesData     add(const SalesData&, const SalesData&);
 	friend std::istream& read(std::istream&, SalesData&);
 	friend std::ostream& print(std::ostream&, const SalesData&);

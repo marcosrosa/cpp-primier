@@ -25,6 +25,7 @@ using std::runtime_error;
 
 //#include "chapter6.h"
 #include "SalesData.h"
+#include "trem.h"
 
 void sayHello(const string &s1) {
 	cout <<"end s1" <<  &s1 << endl;
@@ -165,11 +166,12 @@ int main() {
 	cout << "Units : \t" << trans.getUnitsSold() << endl;
 	cout << "Lucro : \t" << trans.getRevenue() << endl;
 
-	SalesData novoItem(cin);
+	//SalesData novoItem(cin);
 
-	print(cout, novoItem);
-	cout << endl;
-	print(cout, trans);
+	trem doido;
+
+	doido.doTheTest();
+
 
 	return 0;
 }
