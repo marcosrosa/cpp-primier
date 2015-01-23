@@ -155,6 +155,23 @@ int main() {
 
 	SalesData trans("7654321", 7, 75.25);
 	SalesData outro("7654321", 3, 80.25);
+	SalesData outra("7654322", 4, 84.25);
+
+	vector<SalesData> lstSales;
+	cout << "capacidade do vetor: " << lstSales.capacity() << endl;
+	lstSales.push_back(trans);
+	cout << "capacidade do vetor: " << lstSales.capacity() << endl;
+	lstSales.push_back(outro);
+	cout << "capacidade do vetor: " << lstSales.capacity() << endl;
+	lstSales.push_back(outra);
+	cout << "capacidade do vetor: "<< lstSales.capacity() << endl;
+	cout << "---------------" << endl;
+
+	for (const auto &sale : lstSales) {
+		// print SalesData.h friend
+		print(cout, sale);
+		cout << "\n---------------" << endl;
+	}
 
 	cout << "isbnNo: \t" << trans.getBookNo() << endl;
 	cout << "Units : \t" << trans.getUnitsSold() << endl;
