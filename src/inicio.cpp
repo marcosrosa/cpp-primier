@@ -38,14 +38,14 @@ int calcQuadrado(const int &rVal) {
 void exerciciosParametros(void) {
 	cout << "!!!Testes de Passagem por valor Copia"
 			" e referencia e ponteiros!!!" << endl;
-	string nova("Justiça Federal @ Espirito Santo ~");
+	string nova("Justiï¿½a Federal @ Espirito Santo ~");
 
 	cout << "String -> " << nova << endl;
 	cout << "tamanho -> " << nova.size() << endl;
 	sayHello(nova);
 	cout << "String original -> " << nova << endl;
 
-	// laço for passando argumentos por referência
+	// laï¿½o for passando argumentos por referï¿½ncia
 	for (int x=0; x < 11; x++) {
 		cout << "Quadrado de [ " << x << " ] = " << calcQuadrado(x) << endl;
 	}
@@ -65,7 +65,7 @@ void exerciciosParametros(void) {
 
 void exercVetores(void) {
 	cout << "<<exercicios com vetores>>" << endl;
-	cout << "Forneça as palavras para incluir no vetor:" << endl;
+	cout << "Forneï¿½a as palavras para incluir no vetor:" << endl;
 
 	string palavra;
 	vector<string> plvs;
@@ -165,12 +165,12 @@ int main() {
 	cout << "capacidade do vetor: " << lstSales.capacity() << endl;
 	lstSales.push_back(outra);
 	cout << "capacidade do vetor: "<< lstSales.capacity() << endl;
-	cout << "---------------" << endl;
+	cout << "-------------------------" << endl;
 
 	for (const auto &sale : lstSales) {
 		// print SalesData.h friend
 		print(cout, sale);
-		cout << "\n---------------" << endl;
+		cout << "\n-------------------------" << endl;
 	}
 
 	cout << "isbnNo: \t" << trans.getBookNo() << endl;

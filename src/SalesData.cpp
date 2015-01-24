@@ -26,8 +26,8 @@ std::istream& read(std::istream &is, SalesData &item) {
 }
 
 std::ostream& print(std::ostream &os, const SalesData &item) {
-	os << item.getBookNo() << " " << item.getUnitsSold() << " "
-			<< item.getRevenue() << " " << item.avgPrice();
+	os << item.getBookNo() << "\t\t" << item.getUnitsSold() << "\t"
+			<< item.getRevenue() << "\t" << item.avgPrice();
 	return os;
 }
 
