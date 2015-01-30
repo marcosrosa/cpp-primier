@@ -19,6 +19,8 @@ class trem {
 public:
 	trem() = default;
 	void doTheTest();
+	void apresData();
+	void exercMaps();
 };
 
 

@@ -5,8 +5,20 @@
  *      Author: jesmrfd
  */
 
+#include <ctime>
+#include <cwchar>
+#include <locale>
 #include <iostream>
 #include <assert.h>
+
+#include <string>
+using std::string;
+
+#include <map>
+using std::map;
+
+#include <utility>
+using std::pair;
 
 #include "trem.h"
 
@@ -35,4 +47,43 @@ void trem::doTheTest() {
 	assert(std::cout << "class-> trem.cpp method -> doTheTest()" << std::endl);
 	arrayTest();
 	assert(std::cout << "fim -> trem.cpp method -> doTheTest()" << std::endl);
+}
+
+void trem::apresData() {
+
+	std::wcout << "User-preferred Alô locale setting is " << std::locale("").name().c_str() << '\n';
+	// on startup, the global locale is the "C" locale
+	//std::locale localid = getloc();
+    std::time_t t = std::time(NULL);
+    wchar_t wstr[100];
+    if(std::wcsftime(wstr, 100, L"%d/%m/%Y", std::localtime(&t))) {
+        std::wcout << wstr << '\n';
+    }
+}
+
+void trem::exercMaps() {
+	map<string, size_t> word_count;
+	string word;
+	std::cout << "Escreva uma Frase:" << std::endl;
+	//while(std::cin >> word)
+	//	++word_count[word];
+
+	// o retorno de inseert para map
+	// pair<map<string, size_t>::iterator, boll>
+	while(std::cin >> word)
+		++word_count.insert(make_pair(word,0)).first->second;
+
+
+	//auto novo = word_count.find("chuchu");
+	// auto aponta para este tipo abaixo.
+	map<string,size_t>::iterator novo = word_count.find("tomate");
+	if (novo != word_count.end())
+		std::cout << "localizado :" << novo->second << std::endl;
+
+	for (const auto &w : word_count) {
+		std::cout << w.first << " ocorre " << w.second <<
+				(( w.second>1) ? "vezes" : "vez") << std::endl;
+	}
+
+
 }

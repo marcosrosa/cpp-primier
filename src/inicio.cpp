@@ -23,6 +23,10 @@ using std::vector;
 using std::exception;
 using std::runtime_error;
 
+#include <algorithm>
+using std::accumulate;
+
+
 //#include "chapter6.h"
 #include "SalesData.h"
 #include "trem.h"
@@ -35,6 +39,7 @@ void sayHello(const string &s1) {
 int calcQuadrado(const int &rVal) {
 	return rVal * rVal;
 }
+
 void exerciciosParametros(void) {
 	cout << "!!!Testes de Passagem por valor Copia"
 			" e referencia e ponteiros!!!" << endl;
@@ -55,7 +60,6 @@ void exerciciosParametros(void) {
 	for (auto &c : nova) {
 		if (ispunct(c))
 			qtd_pontuacao++;
-
 	}
 
 	cout << "Pontuacoes em nova: " << qtd_pontuacao << endl;
@@ -65,7 +69,7 @@ void exerciciosParametros(void) {
 
 void exercVetores(void) {
 	cout << "<<exercicios com vetores>>" << endl;
-	cout << "Forne�a as palavras para incluir no vetor:" << endl;
+	cout << "Forneça as palavras para incluir no vetor:" << endl;
 
 	string palavra;
 	vector<string> plvs;
@@ -147,11 +151,19 @@ void exercExcecoes(void) {
 }
 
 
+void exercAlgoritimos(void) {
+	vector<int> vi{3,5,6,7,8,9,4,62,23,10};
+	int soma = accumulate(vi.cbegin(), vi.cend(), 0);
+	cout << "soma do array = " << soma << endl;
+}
+
 int main() {
 	//exerciciosParametros();
 	//exercVetores2();
 	//exercVetores();
 	//exercExcecoes();
+	exercAlgoritimos();
+
 
 	SalesData trans("7654321", 7, 75.25);
 	SalesData outro("7654321", 3, 80.25);
@@ -164,7 +176,7 @@ int main() {
 	lstSales.push_back(outro);
 	cout << "capacidade do vetor: " << lstSales.capacity() << endl;
 	lstSales.push_back(outra);
-	cout << "capacidade do vetor: "<< lstSales.capacity() << endl;
+	cout << "capacidade do vetor: " << lstSales.capacity() << endl;
 	cout << "-------------------------" << endl;
 
 	for (const auto &sale : lstSales) {
@@ -185,9 +197,11 @@ int main() {
 
 	//SalesData novoItem(cin);
 
-	trem doido;
+	trem tremDoido;
 
-	doido.doTheTest();
+	tremDoido.doTheTest();
+
+	tremDoido.exercMaps();
 
 
 	return 0;
