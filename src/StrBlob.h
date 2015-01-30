@@ -9,11 +9,16 @@
 #define STRBLOB_H_
 
 #include <memory>
+#include <vector>
 
 class StrBlob {
 public:
 	typedef std::vector<std::string>::size_type size_type;
+
+	//StrBlob() : data ( std::make_shared<std::vector<std::string>>()) { }
+
 	StrBlob();
+
 	StrBlob(std::initializer_list<std::string> il);
 	size_type size() const { return data->size(); }
 	bool empty() const { return data->empty(); }

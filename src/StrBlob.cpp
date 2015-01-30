@@ -5,10 +5,20 @@
  *      Author: jesmrfd
  */
 
+
+
 #include "StrBlob.h"
+#include <string>
+using std::string;
 
-StrBlob::StrBlob() {
-	// TODO Auto-generated constructor stub
+#include<stdexcept>
 
+StrBlob::StrBlob() : data ( std::make_shared<std::vector<string>>()) { }
+
+StrBlob::StrBlob(std::initializer_list<string> il) : data
+		( std::make_shared<std::vector<string>>(il)) { }
+
+void StrBlob::check(size_type i, const string &msg) const {
+	if (i >= data->size())
+		throw std::out_of_range(msg);
 }
-
