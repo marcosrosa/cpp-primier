@@ -27,6 +27,7 @@ int trem::cnt2 = 30;
 constexpr int trem::sequencia[];
 
 int trem::arrayTest() {
+	//so um comentario para ver como fica no git
 	std::cout << "class-> trem.cpp method -> arrayTest()" << std::endl;
 	int ia[] = {8,7,6};
 	for (int x = 0; x < 3; ++x) {
