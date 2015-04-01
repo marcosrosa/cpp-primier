@@ -1,2 +1,2 @@
 # cpp-primier
-exercicios do livro cpp pimier
+exercicios do livro cpp primmier - b.teste
